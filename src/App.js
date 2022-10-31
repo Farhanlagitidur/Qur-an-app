@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import Titles from './component/surahTitle';
+import Surah from './component/surah';
+import Footer from './component/footer';
+import ScrollToTop from './component/scrolltotop'
+import {Route,Routes,Router} from 'react-router-dom';
+import ParticlesBackground from './component/particlesBackground';
 
-function App() {
+const App = () =>{
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <div className='bg-black '>
+        <ParticlesBackground />
+        <Routes>
+         <Route path='/' element={<Titles/>}/>
+         <Route path='/surah/:nomor' element={<Surah/>}/>
+        </Routes>
+        <ScrollToTop />
+        </div>
+  
   );
 }
 
